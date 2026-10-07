@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="Lista de compras para cada integrante de la familia.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Compras">
+  <title>Lista de compras familiar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Compras</h1>
+      <div class="topbar-actions">
+        <button class="btn ghost" data-action="open-share" id="share-btn">Compartir</button>
+        <button class="btn primary" data-action="open-editor">Editar</button>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" aria-label="Integrantes"></nav>
+  </header>
+
+  <main id="list" class="list"></main>
+
+  <dialog class="sheet" id="editor" aria-labelledby="editor-title">
+    <div class="sheet-head">
+      <h2 id="editor-title">Editar</h2>
+      <button class="btn primary" data-action="close-editor">Listo</button>
+    </div>
+    <div class="sheet-body" id="editor-body"></div>
+  </dialog>
+
+  <dialog class="sheet" id="share" aria-labelledby="share-title">
+    <div class="sheet-head">
+      <h2 id="share-title">Compartir</h2>
+      <button class="btn ghost" data-action="close-share">Cerrar</button>
+    </div>
+    <div class="sheet-body" id="share-body"></div>
+  </dialog>
+
+  <dialog class="sheet" id="import" aria-labelledby="import-title">
+    <div class="sheet-head">
+      <h2 id="import-title">Lista recibida</h2>
+    </div>
+    <div class="sheet-body" id="import-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
