@@ -15,4 +15,22 @@ Abre `index.html` o sírvela como sitio estático:
 python3 -m http.server 8000
 ```
 
-Para usarla desde varios teléfonos, publícala en cualquier hosting estático (Vercel, Netlify, GitHub Pages).
+## Publicar en Vercel
+
+El proyecto ya incluye `vercel.json` (sitio estático, sin build, cabeceras de seguridad y sin caché para que los cambios se vean al tiro) y `.vercelignore`.
+
+**Opción A — desde GitHub (recomendada):**
+1. Sube el repo a GitHub.
+2. En [vercel.com/new](https://vercel.com/new) importa el repo. No hay que configurar nada: Framework "Other", sin build command.
+3. Cada `git push` a `main` publica una nueva versión.
+
+**Opción B — desde la terminal:**
+
+```sh
+npm i -g vercel   # si no lo tienes
+vercel login
+vercel            # primera vez: crea el proyecto y publica una preview
+vercel --prod     # publica en producción
+```
+
+> Cada teléfono guarda sus propios datos. Usa el botón **Compartir → Copiar enlace** para pasar listas entre teléfonos.
